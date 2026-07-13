@@ -1,0 +1,10 @@
+# SIRMARITAN NEWS Automated Scraping Rules Manifest
+User-agent: *
+Allow: /index.html
+Allow: /article.html
+Allow: /style.css
+Allow: /script.js
+Disallow: /config/
+Disallow: /private/
+
+Sitemap: https://sirmaritan-news.github.io/sitemap.xml
