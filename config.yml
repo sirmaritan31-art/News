@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME # <- Change this to your repo details
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "news"
+    label: "News Articles"
+    folder: "data/articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Article ID", name: "id", widget: "number", value_type: "int" }
+      - { label: "Headline Title", name: "title", widget: "string" }
+      - { label: "Short Excerpt Summary", name: "excerpt", widget: "text" }
+      - { label: "Category", name: "category", widget: "select", options: ["world", "technology", "business", "sports"] }
+      - { label: "Author Name", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "publishDate", widget: "date", format: "MMMM DD, YYYY" }
+      - { label: "Estimated Read Time", name: "readTime", widget: "string", default: "5 min read" }
+      - { label: "Cover Image", name: "image", widget: "image" }
+      - { label: "Feature in Home Slider?", name: "trending", widget: "boolean", default: false }
+      - { label: "Popularity Rank (1-5)", name: "popularRank", widget: "number", value_type: "int", default: 4 }
+      - { label: "Full News Story Content", name: "body", widget: "markdown" }
+      
